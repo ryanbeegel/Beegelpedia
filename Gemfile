@@ -26,3 +26,5 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   gem 'sdoc', require: false
 end
+
+gem 'bootstrap-sass', '~> 3.1.1'
