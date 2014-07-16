@@ -32,3 +32,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
 
 gem 'figaro'
+
+gem 'pundit'
+
+gem 'redcarpet'
