@@ -77,4 +77,7 @@ Beegelpedia::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # http://beegelpedia.herokuapp.com
+   config.action_mailer.default_url_options = { host: 'beegelpedia.herokuapp.com' }
 end
