@@ -2,6 +2,11 @@
 
 <div class="row">
   <div class="col-md-8">
+    <small>
+      <%= image_tag(@wiki.user.avatar.tiny.url) if @wiki.user.avatar? %>
+      submitted <%= time_ago_in_words(@wiki.created_at) %> ago by
+      <%= @wiki.user.name %> 
+    </small>
     <p><%= markdown @wiki.body %></p>
   </div>
   <div class="col-md-4">
