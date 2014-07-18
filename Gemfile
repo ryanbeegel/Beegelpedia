@@ -42,3 +42,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'fog'
+
+group :test do
+  gem 'rspec-rails'
+end
