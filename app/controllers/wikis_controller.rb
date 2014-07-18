@@ -42,6 +42,19 @@ class WikisController < ApplicationController
      end
    end
 
+   def destroy
+     @wiki = Wiki.find(params[:id])
+ 
+     authorize @wiki
+     if @wiki.destroy
+       flash[:notice] = "Wiki was deleted successfully."
+       redirect_to wikis_path
+     else
+       flash[:error] = "There was an error deleting the wiki."
+       render :show
+     end
+   end
+
   private
 
   def wiki_params
