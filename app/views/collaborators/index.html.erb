@@ -10,7 +10,11 @@
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
-      <td><%= link_to "Give Access", class: "btn btn-success" %></td>
+      <% if @wiki.collaborators.collect(&:user).include?(user) %>        
+        <td><%= link_to "Remove Access", wiki_collaborator_path(@wiki, Collaborator.for_user_and_wiki(user, @wiki).first), method: :delete, class: "btn btn-danger" %></td>
+      <% else %>
+        <td><%= link_to "Give Access", wiki_collaborators_path(@wiki, user_id: user.id), method: :post, class: "btn btn-success" %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
